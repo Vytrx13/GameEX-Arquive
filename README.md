@@ -1,11 +1,11 @@
 # GameEX-Arquive
-simple game finder webside
+simple game finder website
 
 to run it locally:
 
 add your api key to index.js
 
-you can get you key here: https://www.giantbomb.com/api/ 
+you can get your key here: https://www.giantbomb.com/api/ 
 
 on terminal:
 
