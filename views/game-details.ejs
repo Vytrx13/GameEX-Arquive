@@ -1,0 +1,32 @@
+<%- include("header.ejs") %> 
+
+<body>
+<main class="game-details-container">
+    <% if (locals.game) { %>
+        <div class="game-header">
+            <h1><%= game.name %></h1>
+        </div>
+        
+        <div class="game-content">
+            <img src="<%= game.image ? game.image.original_url : '/default-game.png' %>" alt="<%= game.name %>">
+            <div class="game-info">
+                <p><strong>Platforms:</strong> <%= game.platforms ? game.platforms.map(p => p.name).join(', ') : 'N/A' %></p>
+                <p><strong>Genres:</strong> <%= game.genres ? game.genres.map(g => g.name).join(', ') : 'N/A' %></p>
+                <p><strong>Original release date:</strong> <%= game.original_release_date || 'Unknown' %></p>
+                <p><strong>Description:</strong> <%= game.deck || 'N/A' %></p>
+                <p><strong>Characters:</strong> <%= game.characters ? game.characters.map(p => p.name).join(', ') : 'N/A' %></p>
+                <p><strong>Developers:</strong> <%= game.developers ? game.developers.map(p => p.name).join(', ') : 'N/A' %></p>
+                <p><strong>Franchises:</strong> <%= game.franchises ? game.franchises.map(p => p.name).join(', ') : 'N/A' %></p>
+                <p><strong>Publishers:</strong> <%= game.publishers ? game.publishers.map(p => p.name).join(', ') : 'N/A' %></p>
+            </div>
+        </div>
+    <% } else { %>
+        <p class="error-message">No games found.</p>
+    <% } %>
+</main>
+
+
+
+
+
+<%- include("footer.ejs") %>

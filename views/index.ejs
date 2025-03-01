@@ -1,0 +1,35 @@
+<%- include("header.ejs") %> 
+
+<body>
+  <main>
+    <div class="search-container">
+        <p>Search for a game</p>
+        <form action="/search" method="post">
+            <input id="page" type="hidden" name="page" value="1">
+            <input id="search" type="search" placeholder="Enter the name of the game" name="search" autocomplete="off">
+            <input id="search-btn" type="submit" name="search-btn" value="Search">
+        </form>
+    </div>
+
+    <div class="games-container">
+      <%if (locals.games) {%> 
+      <% if (games.length > 0) { %> 
+          <% games.forEach(game => { %>
+             
+          
+              <form class="game-card" action="/select-game" method="post">
+                <input type="hidden" name="gameID" value='<%= game.guid %>'>
+
+                  <button type="submit" class="game-button">
+                      <img src="<%= game.image ? game.image.original_url : '/default-game.jpg' %>" alt="<%= game.name %>">
+                      <p><%= game.name %></p>
+                  </button>
+              </form>
+          <% }) %>
+      <% } else { %>
+          <p class="no-games">No games found.</p>
+      <% }} %>
+  </div>
+</main>
+
+<%- include("footer.ejs") %>
