@@ -39,6 +39,7 @@ app.use('/random', limiter);
 app.get('/', async (req, res) => {
     res.render('index.ejs', { games: games });
     console.log("Home page loaded");
+    games = "";
     // console.log(url);
     // const response = await axios.get(url);
     // const result = response.data;
