@@ -3,10 +3,10 @@ import bodyParser from 'body-parser';
 import axios from 'axios';
 import rateLimit from 'express-rate-limit'; // Importa o rate limiter
 
-
+const api_key = process.env.API_KEY;
 const app = express();
 const port = 3000;
-const api_key = ""
+
 
 // const game_test = "metroid prime"
 
