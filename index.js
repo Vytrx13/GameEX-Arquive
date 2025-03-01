@@ -17,6 +17,8 @@ var url = ""
 // let gameData = null;
 let gameID = null;
 
+
+app.set('trust proxy', 1); 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
