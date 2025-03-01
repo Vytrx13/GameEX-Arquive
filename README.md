@@ -1,7 +1,8 @@
 # GameEX-Arquive
 simple game finder website
+https://gameex-arquive.onrender.com
 
-to run it locally:
+or run it locally:
 
 add your api key to index.js
 
