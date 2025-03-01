@@ -63,7 +63,7 @@ app.get('/game-details', async(req, res) => {
     const gameData = response.data.results;
     // console.log(gameData);
     res.render('game-details.ejs', { game: gameData });
-    console.log("Game details loaded");
+    console.log("Game details loaded :", gameData.name);
     }
     catch (error) {
         console.error("Failed to make request:", error.message);
